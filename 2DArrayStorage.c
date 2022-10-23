@@ -2,19 +2,19 @@
 #include <string.h>
 
 int main() {
-    char input[200];
-    char output[200][200];
-    int k = 0;
+    char UserInput[200];
+    char twoDimArray[200][200];
+    int twoDimArrayFirstIndex = 0;
 
-    fgets(input, sizeof input, stdin);
+    fgets(UserInput, sizeof UserInput, stdin);
 
-    for(int i = 0, j = 0; i < strlen(input); i++, j++){
-        if (input[i] == ' ' && input[i + 1] != ' '){
-            k++;
-            j = -1;
+    for(int i = 0, twoDimArraySecIndex = 0; i < strlen(UserInput); i++, twoDimArraySecIndex++){
+        if (UserInput[i] == ' ' && UserInput[i + 1] != ' '){
+            twoDimArrayFirstIndex++;
+            twoDimArraySecIndex = -1;
         } else{
-            (output[k][j] = input[i]);
+            (twoDimArray[twoDimArrayFirstIndex][twoDimArraySecIndex] = UserInput[i]);
         }
     }
-    puts(output[2]);
+    puts(twoDimArray[2]);
 }
